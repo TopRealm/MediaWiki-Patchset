@@ -251,9 +251,9 @@ class SpecialBotPasswords extends FormSpecialPage {
 				'size' => BotPassword::APPID_MAXLENGTH,
 				'maxlength' => BotPassword::APPID_MAXLENGTH,
 				'validation-callback' => static function ( $v ) {
-					### 本处在高版本PHP会出现Deprecated: Passing null to parameter #1 ($string) of type string is deprecated,
-					### 故采用三元运算符进行判断
-					#######$v = trim( $v );
+#######	本处在高版本PHP会出现Deprecated: Passing null to parameter #1 ($string) of type string is deprecated,
+#######	故采用三元运算符进行判断
+#######				$v = trim( $v );
 					$v = is_string($v) ? trim($v) : '';
 					return $v !== '' && strlen( $v ) <= BotPassword::APPID_MAXLENGTH;
 				},
